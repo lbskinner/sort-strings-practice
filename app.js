@@ -1,11 +1,12 @@
 // const fs = require("fs");
-
+// code below commented out works in node
 // fs.readFile("example-list.txt", (error, data) => {
 //   if (error) {
 //     console.log("READ FILE ERROR: ", error);
 //   }
 //   console.log(data.toString());
 // });
+
 const fileSelector = document.getElementById("file-selector");
 
 fileSelector.addEventListener("change", (event) => {
@@ -15,13 +16,13 @@ fileSelector.addEventListener("change", (event) => {
   const reader = new FileReader();
   reader.readAsText(file);
   reader.onload = () => {
-    console.log(reader.result);
+    // file content in reader.result if successful
+    // separate the result by newline and store them in an array
+    const fileContent = [...reader.result.split("\n")];
+    console.log(fileContent);
   };
+  // reader error if read fail
   reader.onerror = () => {
-    console.log(reader.error);
+    console.log("Error Reading File Content: ", reader.error);
   };
 });
-
-// function readFile(file) {
-
-// }
