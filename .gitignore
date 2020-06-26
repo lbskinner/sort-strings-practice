@@ -1,0 +1,9 @@
+# Mac Auto-Generated Files and code editor files
+.DS_Store
+.DS_STORE/
+
+# Dependency directories
+node_modules/
+
+# ignore package-lock as it complicates merging
+package-lock.json
