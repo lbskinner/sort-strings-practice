@@ -37,20 +37,26 @@ describe("sortStringsInArray", () => {
     ]);
   });
 
-  // it("sorts strings contain number first from smallest to biggest based on the number then alphabetically for the rest of the strings", () => {
-  //   const sortedArray = sortStringsInArray([
-  //     "11 apple",
-  //     "2 orange",
-  //     "1 banana",
-  //     "2 pineapple",
-  //     "1 watermelon",
-  //   ]);
-  //   expect(sortedArray).toEqual([
-  //     "1 banana",
-  //     "1 watermelon",
-  //     "2 orange",
-  //     "2 pineapple",
-  //     "11 apple",
-  //   ]);
-  // });
+  it("sorts strings contain number first from smallest to biggest based on the number then alphabetically for the rest of the strings", () => {
+    const sortedArray = sortStringsInArray([
+      "secretary",
+      "activity",
+      "supermarket",
+      "11 apple",
+      "2 orange",
+      "1 banana",
+      "2 pineapple",
+      "1 watermelon",
+    ]);
+    expect(sortedArray).toEqual([
+      "1 banana",
+      "1 watermelon",
+      "2 orange",
+      "2 pineapple",
+      "11 apple",
+      "activity",
+      "secretary",
+      "supermarket",
+    ]);
+  });
 });
