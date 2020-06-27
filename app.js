@@ -1,5 +1,5 @@
 // const fs = require("fs");
-// code below commented out works in node
+// // code below commented out works in node
 // fs.readFile("example-list.txt", (error, data) => {
 //   if (error) {
 //     console.log("READ FILE ERROR: ", error);
