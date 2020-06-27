@@ -1,13 +1,7 @@
 function sortStringsInArray(someArray) {
   const sortedArray = someArray.sort((lastString, nextString) => {
     const lastStringArray = [...lastString.split(" ")];
-    console.log(lastStringArray);
-    console.log(isNaN(parseFloat(lastStringArray[0])));
-
     const nextStringArray = [...nextString.split(" ")];
-    console.log(nextStringArray);
-    console.log(parseFloat(nextStringArray[0]));
-
     if (
       isNaN(parseFloat(lastStringArray[0])) &&
       isNaN(parseFloat(nextStringArray[0]))
@@ -24,7 +18,6 @@ function sortStringsInArray(someArray) {
     }
   });
   console.log(sortedArray);
-
   return sortedArray;
 }
 
