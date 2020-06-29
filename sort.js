@@ -8,8 +8,19 @@ function sortStringsInArray(someArray) {
       isNaN(parseInt(lastStringArray[0])) &&
       isNaN(parseInt(nextStringArray[0]))
     ) {
-      // sort them alphabetically
-      return lastStringArray[0] > nextStringArray[0] ? 1 : -1;
+      // and both first items are the same when all converted to lowercase
+      if (
+        lastStringArray[0].toLowerCase() === nextStringArray[0].toLowerCase()
+      ) {
+        // if the original first item in A lower case, return -1, if not return 1
+        return lastStringArray[0] === lastStringArray[0].toLowerCase() ? -1 : 1;
+      } else {
+        // sort them alphabetically regardless of letter cases
+        return lastStringArray[0].toLowerCase() >
+          nextStringArray[0].toLowerCase()
+          ? 1
+          : -1;
+      }
     }
     // first item in lastStringArray(A) is not a number and first item in nextStringArray(B) is a number
     else if (
@@ -36,9 +47,9 @@ function sortStringsInArray(someArray) {
         if (
           lastStringArray[1].toLowerCase() === nextStringArray[1].toLowerCase()
         ) {
+          // if second item of A is the same when compared to it's lowercase version
           return lastStringArray[1] === lastStringArray[1].toLowerCase()
-            ? // if second item of A is the same when compared to it's lowercase version
-              -1 // means that the origin item is lower cased, return -1
+            ? -1 // means that the origin item is lower cased, return -1
             : 1; // if not, means the original item is upper cased, return 1
         } else {
           // sort the rest of the strings alphabetically
