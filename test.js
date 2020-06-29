@@ -37,11 +37,8 @@ describe("sortStringsInArray", () => {
     ]);
   });
 
-  it("sorts strings contain number first from smallest to biggest based on the number then alphabetically for the rest of the strings", () => {
+  it("sorts strings contain numbers first from smallest to biggest based on the number then alphabetically for the rest of the strings", () => {
     const sortedArray = sortStringsInArray([
-      "secretary",
-      "activity",
-      "supermarket",
       "11 apple",
       "2 orange",
       "1 banana",
@@ -54,9 +51,33 @@ describe("sortStringsInArray", () => {
       "2 orange",
       "2 pineapple",
       "11 apple",
-      "activity",
-      "secretary",
-      "supermarket",
+    ]);
+  });
+
+  it("sorts strings contain numbers first from smallest to biggest based on the number then alphabetically for the rest of the strings regardless of cases", () => {
+    const sortedArray = sortStringsInArray([
+      "11 Apple",
+      "2 Orange",
+      "1 Banana",
+      "11 apple",
+      "2 orange",
+      "1 banana",
+      "2 pineapple",
+      "1 watermelon",
+      "1 Watermelon",
+      "2 Pineapple",
+    ]);
+    expect(sortedArray).toEqual([
+      "1 banana",
+      "1 Banana",
+      "1 watermelon",
+      "1 Watermelon",
+      "2 orange",
+      "2 Orange",
+      "2 pineapple",
+      "2 Pineapple",
+      "11 apple",
+      "11 Apple",
     ]);
   });
 });

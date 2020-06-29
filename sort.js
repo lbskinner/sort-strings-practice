@@ -32,8 +32,21 @@ function sortStringsInArray(someArray) {
     ) {
       // and both first items in the arrays are the same numbers
       if (parseInt(lastStringArray[0]) === parseInt(nextStringArray[0])) {
-        // sort the rest of the strings alphabetically
-        return lastStringArray[1] > nextStringArray[1] ? 1 : -1;
+        // both the second items in the arrays are the same when converted to lower case
+        if (
+          lastStringArray[1].toLowerCase() === nextStringArray[1].toLowerCase()
+        ) {
+          return lastStringArray[1] === lastStringArray[1].toLowerCase()
+            ? // if second item of A is the same when compared to it's lowercase version
+              -1 // means that the origin item is lower cased, return -1
+            : 1; // if not, means the original item is upper cased, return 1
+        } else {
+          // sort the rest of the strings alphabetically
+          return lastStringArray[1].toLowerCase() >
+            nextStringArray[1].toLowerCase()
+            ? 1
+            : -1;
+        }
       } else {
         // sort the two numbers smallest to biggest
         return parseInt(lastStringArray[0]) > parseInt(nextStringArray[0])
