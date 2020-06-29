@@ -80,4 +80,27 @@ describe("sortStringsInArray", () => {
       "11 Apple",
     ]);
   });
+
+  it("sorts strings contain numbers first from smallest to biggest based on the number then alphabetically strings don't contain numbers regardless of cases", () => {
+    const sortedArray = sortStringsInArray([
+      "Apple",
+      "Orange",
+      "watermelon",
+      "orange",
+      "pineapple",
+      "apple",
+      "Watermelon",
+      "Pineapple",
+    ]);
+    expect(sortedArray).toEqual([
+      "apple",
+      "Apple",
+      "orange",
+      "Orange",
+      "pineapple",
+      "Pineapple",
+      "watermelon",
+      "Watermelon",
+    ]);
+  });
 });
