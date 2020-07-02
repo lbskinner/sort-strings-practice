@@ -7,29 +7,43 @@ function sortStringsInArray(someArray) {
     const regexString = /[^a-zA-Z]/g; // match everything that are not letters
     const regexNum = /[^0-9]/g; // match everything that are not numbers
 
-    // both are numbers
-    if (parseInt(lastString) !== NaN && parseInt(nextString) !== NaN) {
+    // both are converted to numbers
+    if (!isNaN(parseInt(lastString)) && !isNaN(parseInt(nextString))) {
       // both items are the same numbers
       if (parseInt(lastString) === parseInt(nextString)) {
         // replace everything that are not letter with "", only words left
         lastStringLetters = lastString.replace(regexString, "");
         nextStringLetters = nextString.replace(regexString, "");
-        return lastStringLetters > nextStringLetters ? 1 : -1;
+        if (
+          lastStringLetters.toLowerCase() === nextStringLetters.toLowerCase()
+        ) {
+          return lastStringLetters === lastStringLetters.toLowerCase() ? -1 : 1;
+        } else {
+          return lastStringLetters.toLowerCase() > nextStringLetters.toLowerCase
+            ? 1
+            : -1;
+        }
       } else {
         return parseInt(lastString) > parseInt(nextString) ? 1 : -1;
       }
     }
     // if lastString is not a number and nextString is a number
-    else if (isNaN(parseInt(lastString)) && parseInt(nextString) !== NaN) {
+    else if (isNaN(parseInt(lastString)) && !isNaN(parseInt(nextString))) {
       return 1;
     }
     // if lastString is a number and nextSting is not a number
-    else if (parseInt(lastString) !== NaN && isNaN(parseInt(nextString))) {
+    else if (!isNaN(parseInt(lastString)) && isNaN(parseInt(nextString))) {
+      console.log("num + let");
+
       return -1;
     }
     // if both are not numbers
     else if (isNaN(parseInt(lastString)) && isNaN(parseInt(nextString))) {
-      return lastString > nextString ? 1 : -1;
+      if (lastString.toLowerCase() === nextString.toLowerCase()) {
+        return lastString === lastString.toLowerCase() ? -1 : 1;
+      } else {
+        return lastString.toLowerCase() > nextString.toLowerCase() ? 1 : -1;
+      }
     }
   });
   console.log(sortedArray);
