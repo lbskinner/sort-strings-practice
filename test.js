@@ -103,4 +103,19 @@ describe("sortStringsInArray", () => {
       "Watermelon",
     ]);
   });
+
+  it("sorts strings contain numbers from smallest to biggest based on the numbers then alphabetically for the rest of the strings (no spaces in between)", () => {
+    const sortedArray = sortStringsInArray([
+      "5Apple",
+      "2 Orange",
+      "1 watermelon",
+      "5 orange",
+    ]);
+    expect(sortedArray).toEqual([
+      "1 watermelon",
+      "2 Orange",
+      "5Apple",
+      "5 orange",
+    ]);
+  });
 });
