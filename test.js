@@ -118,4 +118,39 @@ describe("sortStringsInArray", () => {
       "5 orange",
     ]);
   });
+
+  it("sorts everything from example file", () => {
+    const sortedArray = sortStringsInArray([
+      "2 Steaks",
+      "10 Chicken Wings",
+      "867 Ship’s company",
+      "343GuiltySparks",
+      "initiative",
+      "867 Sheep",
+      "television",
+      "849 car loan",
+      "867 ship’s company",
+      "Teal",
+      "864 self-sacrifice",
+      "Television",
+      "330 kangaroo’s-foot",
+      "907 international law enforcement agency",
+    ]);
+    expect(sortedArray).toEqual([
+      "2 Steaks",
+      "10 Chicken Wings",
+      "330 kangaroo’s-foot",
+      "343GuiltySparks",
+      "849 car loan",
+      "864 self-sacrifice",
+      "867 Sheep",
+      "867 ship’s company",
+      "867 Ship’s company",
+      "907 international law enforcement agency",
+      "initiative",
+      "Teal",
+      "television",
+      "Television",
+    ]);
+  });
 });
